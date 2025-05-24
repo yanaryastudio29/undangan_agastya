@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <title>Undangan Tigang Sasih - Agastya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 1em;
+    }
+    img {
+      width: 90%;
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #0006;
+    }
+    .nama{
+      font-family: 'Cinzel', serif, 'Segoe UI', sans-serif;
+      color: #ffc107;
+      font-size: 20px;
+      font-style: inherit;
+    }
+    .nama-tamu{
+      font-family: 'Cinzel', serif, 'Segoe UI', sans-serif;
+      font-size: 20px;
+      font-style: inherit;
+    }
+    .judul {
+      font-family: 'Cinzel', serif, 'Segoe UI', sans-serif;
+    }
+    .section {
+      margin: 2em 1em;
+    }
+    .box {
+      background: #1e3a5c;
+      padding: 1em;
+      margin: 1em auto;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1em;
+      padding: 0.75em 1.5em;
+      background-color: #ffc107;
+      color: #000;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 2em;
+      font-size: 14px;
+      color: #ccc;
+      padding-bottom: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="judul">UNDANGAN TIGANG SASIH</h1>
+    <h2 class="nama">I Wayan Agastya Shankara Candrakumara</h2>
+    <p class="nama-tamu">Om Swastyastu, <span id="namaTamu">Tamu</span></p>
+  </header>
+
+  <audio src="lagu.mp3" autoplay loop></audio>
+
+  <img src="cover.jpeg" alt="Foto Agastya">
+  <div class="section">
+    <p>Om Swastyastu</p>
+    <p>
+      Atas Asung Kerta Wara Nugraha Ida Sang Hyang Widhi Wasa / Tuhan Yang Maha Esa,
+      kami bermaksud menyelenggarakan Upacara Manusa Yadnya Tigang Sasih (Metelubulanan).
+    </p>
+    <p>
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir
+      untuk memberikan doa restu pada:
+    </p>
+  </div>
+
+  <div class="box">
+    <p><strong>🗓️ Tanggal:</strong> 28 Mei 2025</p>
+    <p><strong>🕚 Waktu:</strong> 11.00 - Selesai</p>
+    <p><strong>📍 Lokasi:</strong> Kubu Loji, Legian Tengah</p>
+    <a href="https://www.google.com/maps/search/Kubu+Loji,+Legian+Tengah" target="_blank" class="button">Lihat di Google Maps</a>
+  </div>
+
+  <img src="isi.jpeg" alt="Undangan Resmi">
+
+  <div class="section">
+    <p class="judul">OM, SANTHI, SANTHI, SANTHI, OM</p>
+    <p><strong>Kami yang berbahagia</strong></p>
+    <p>Adi & Adelia</p>
+  </div>
+
+  <script>
+  // Fungsi untuk ambil parameter URL
+  function getParameterByName(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  // Ambil nama dari URL, default "Tamu" jika kosong
+  const nama = getParameterByName('nama') || 'Tamu';
+
+  // Masukkan ke elemen span dengan id "namaTamu"
+  document.getElementById('namaTamu').textContent = nama;
+</script>
+
+
+  <footer>
+    &copy; yanaryastudio 2025 - Undangan Tigang Sasih - Agastya
+  </footer>
+
+</body>
+</html>
