@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <meta property="og:title" content="Undangan Tigang Sasih - Agastya" />
+  <meta property="og:description" content="Undangan Tigang Sasih I Wayan Agastya Shankara Candrakumara. Klik untuk detail." />
+  <meta property="og:image" content="https://example.com/cover.jpeg" />
+  <meta property="og:url" content="https://example.com/undangan.html" />
+
   <title>Undangan Tigang Sasih - Agastya</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Cinzel:wght@400..900&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(to bottom, #0d1b2a, #1b263b);
@@ -13,26 +17,39 @@
       margin: 0;
       padding: 0;
       text-align: center;
+      font-family: 'Cinzel', serif;
     }
     header {
       padding: 1em;
     }
-    img {
+    .imgUndangan {
       width: 90%;
       max-width: 500px;
       margin: 20px auto;
       border-radius: 15px;
       box-shadow: 0 0 15px #0006;
     }
-    .nama{
+    .imgOrnamen {
+      width: 300px;
+      border-radius: 15px;
+    }
+    .nama {
       font-family: 'Cinzel', serif, 'Segoe UI', sans-serif;
       color: #ffc107;
       font-size: 20px;
       font-style: inherit;
     }
-    .nama-tamu{
+    .nama-tamu {
       font-family: 'Cinzel', serif, 'Segoe UI', sans-serif;
       font-size: 20px;
+      font-style: inherit;
+      padding-top: 70px;
+    }
+    .namaAga{
+      padding-top: -10px;
+      font-family: "Arizonia", cursive, sans-serif;
+      color: #ffc107;
+      font-size: 50px;
       font-style: inherit;
     }
     .judul {
@@ -64,64 +81,206 @@
       color: #ccc;
       padding-bottom: 2em;
     }
+
+    @keyframes slideUpFadeOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+    }
+
+    @keyframes fadeInZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .slide-up-fade-out {
+      animation: slideUpFadeOut 1s forwards;
+    }
+
+    .fade-in-zoom {
+      animation: fadeInZoom 1s ease-out forwards;
+    }
+
+    /* ==== COVER UNGKAPAN ==== */
+    #cover {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      font-family: 'Cinzel', serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Blur background layer */
+    #cover::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(cover.jpeg);
+      background-size: contain;
+      filter: blur(15px);
+      transform: scale(1.1);
+      z-index: -2;
+    }
+
+    /* Main image layer (contain) */
+    #cover::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      height: 80vh;
+      max-width: 90vw;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(cover.jpeg);
+      background-size: contain;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    #cover h3 {
+      margin-top: 20px;
+      z-index: 10;
+      position: relative;
+      font-size: 30px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+
+    #cover button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #ffc107;
+      color: #000;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    #cover button:hover {
+      background-color: #e6ac00;
+    }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1 class="judul">UNDANGAN TIGANG SASIH</h1>
-    <h2 class="nama">I Wayan Agastya Shankara Candrakumara</h2>
+  <!-- COVER UNGKAPAN -->
+  <div id="cover">
+    <img class="imgOrnamen" src="ORNAMEN.png" alt="">
+    <h3 st>Undangan Tigang Sasih<br><a class="namaAga">Agastya</a></h3>
     <p class="nama-tamu">Om Swastyastu, <span id="namaTamu">Tamu</span></p>
-  </header>
-
-  <audio src="lagu.mp3" autoplay loop></audio>
-
-  <img src="cover.jpeg" alt="Foto Agastya">
-  <div class="section">
-    <p>Om Swastyastu</p>
-    <p>
-      Atas Asung Kerta Wara Nugraha Ida Sang Hyang Widhi Wasa / Tuhan Yang Maha Esa,
-      kami bermaksud menyelenggarakan Upacara Manusa Yadnya Tigang Sasih (Metelubulanan).
-    </p>
-    <p>
-      Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir
-      untuk memberikan doa restu pada:
-    </p>
+    <button onclick="bukaUndangan()">Buka Undangan</button>
   </div>
 
-  <div class="box">
-    <p><strong>🗓️ Tanggal:</strong> 28 Mei 2025</p>
-    <p><strong>🕚 Waktu:</strong> 11.00 - Selesai</p>
-    <p><strong>📍 Lokasi:</strong> Kubu Loji, Legian Tengah</p>
-    <a href="https://www.google.com/maps/search/Kubu+Loji,+Legian+Tengah" target="_blank" class="button">Lihat di Google Maps</a>
-  </div>
+  <div id="isiUndangan" style="display: none;">
+    <header>
+      <h1 class="judul">UNDANGAN TIGANG SASIH</h1>
+      <h2 class="nama">I Wayan Agastya Shankara Candrakumara</h2>
+      <p class="nama-tamu">Om Swastyastu, <span id="namaTamu">Tamu</span></p>
+    </header>
 
-  <img src="isi.jpeg" alt="Undangan Resmi">
+    <audio src="lagu.mp3" autoplay loop></audio>
 
-  <div class="section">
-    <p class="judul">OM, SANTHI, SANTHI, SANTHI, OM</p>
-    <p><strong>Kami yang berbahagia</strong></p>
-    <p>Adi & Adelia</p>
+    <img class="imgUndangan" src="cover.jpeg" alt="Foto Agastya" />
+    <div class="section">
+      <p>Om Swastyastu</p>
+      <p>
+        Atas Asung Kerta Wara Nugraha Ida Sang Hyang Widhi Wasa / Tuhan Yang Maha Esa,
+        kami bermaksud menyelenggarakan Upacara Manusa Yadnya Tigang Sasih (Metelubulanan).
+      </p>
+      <p>
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir
+        untuk memberikan doa restu pada:
+      </p>
+    </div>
+
+    <div class="box">
+      <p><strong>🗓️ Tanggal:</strong> 28 Mei 2025</p>
+      <p><strong>🕚 Waktu:</strong> 11.00 - Selesai</p>
+      <p><strong>📍 Lokasi:</strong> Kubu Loji, Legian Tengah</p>
+      <a href="https://www.google.com/maps/search/Kubu+Loji,+Legian+Tengah" target="_blank" class="button">Lihat di Google Maps</a>
+    </div>
+
+    <img class="imgUndangan" src="isi.jpeg" alt="Undangan Resmi" />
+
+    <div class="section">
+      <p class="judul">OM, SANTHI, SANTHI, SANTHI, OM</p>
+      <p><strong>Kami yang berbahagia</strong></p>
+      <p>Adi & Adelia</p>
+    </div>
   </div>
 
   <script>
-  // Fungsi untuk ambil parameter URL
-  function getParameterByName(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-  }
+    // Fungsi untuk ambil parameter URL
+    function getParameterByName(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
 
-  // Ambil nama dari URL, default "Tamu" jika kosong
-  const nama = getParameterByName('nama') || 'Tamu';
+    // Ambil nama dari URL, default "Tamu" jika kosong
+    const nama = getParameterByName('nama') || 'Tamu';
 
-  // Masukkan ke elemen span dengan id "namaTamu"
-  document.getElementById('namaTamu').textContent = nama;
-</script>
+    // Masukkan ke elemen span dengan id "namaTamu"
+    document.getElementById('namaTamu').textContent = nama;
 
+    function bukaUndangan() {
+      const cover = document.getElementById('cover');
+      const isi = document.getElementById('isiUndangan');
+
+      // Tambahkan animasi keluar ke atas
+      cover.classList.add('slide-up-fade-out');
+
+      setTimeout(() => {
+        cover.style.display = 'none';
+        isi.style.display = 'block';
+        isi.classList.add('fade-in-zoom');
+
+        // Mainkan musik
+        const audio = document.querySelector('audio');
+        if (audio) {
+          audio.play().catch(() => {
+            console.log('Autoplay diblokir browser');
+          });
+        }
+      }, 1000); // Durasi sesuai animasi slide-up
+    }
+
+    // Scroll ke atas saat reload
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  </script>
 
   <footer>
     &copy; yanaryastudio 2025 - Undangan Tigang Sasih - Agastya
   </footer>
-
 </body>
 </html>
